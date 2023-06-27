@@ -1,0 +1,2 @@
+RepeatEachValueArray =LAMBDA(ValueArray,RepeatNumber,INDEX(ValueArray, INT((SEQUENCE(RepeatNumber * COUNTA(ValueArray), 1, 0) / RepeatNumber) + 1)));
+RepeatEntireValueArray =LAMBDA(ValueArray,RepeatNumber,INDEX(ValueArray, MOD(SEQUENCE(RepeatNumber * COUNTA(ValueArray), 1, 0), COUNTA(ValueArray)) + 1));
