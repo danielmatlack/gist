@@ -1,3 +1,4 @@
 RepeatEachValueArray =LAMBDA(ValueArray,RepeatNumber,INDEX(ValueArray, INT((SEQUENCE(RepeatNumber * COUNTA(ValueArray), 1, 0) / RepeatNumber) + 1)));
 RepeatEntireValueArray =LAMBDA(ValueArray,RepeatNumber,INDEX(ValueArray, MOD(SEQUENCE(RepeatNumber * COUNTA(ValueArray), 1, 0), COUNTA(ValueArray)) + 1));
 SortUnique = LAMBDA(ValueArray, SORT(UNIQUE(ValueArray)));
+TitleCase = LAMBDA(Sentence,TEXTJOIN(" ", TRUE, MAP(TEXTSPLIT(Sentence, " "), LAMBDA(Word, LEFT(Word, 1) & LOWER(RIGHT(Word, LEN(Word) - 1))))));
